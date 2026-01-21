@@ -10,6 +10,8 @@
 - [Layout Style ID](https://youtu.be/9cWpEes7lVU?si=VDsYI0AQZfs9A6xx)
 - [ID-Image Component](https://youtu.be/2HtpWzjfY3M?si=iH2_RCRR6fp8g4OL)
 - [ScrollView Component - ID](https://youtu.be/NqnrFRZiQns?si=ZOL_KsZ4uNepPGlI)
+- [ID - Image Background](https://youtu.be/LxDHbqUBhdc?si=IW2jqNn6K_5V5UcL)
+- [Props in React Native ID](https://youtu.be/y1iPEAZiRzM?si=FdLSZXT8Kery8sKo)
 
 ---
 
