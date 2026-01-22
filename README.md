@@ -29,5 +29,7 @@
 - [Image - Lesson 5 (HomeScreen)](https://wallpaperaccess.com/full/201215.jpg)
 - [Meeting 5 - Reusable Component](https://drive.google.com/file/d/1b0Gkeaae95rRoZQvRPRkFZnNeajwDzY7/view)
 - [Template Meeting 6](https://docs.google.com/document/d/1MHIgWxmgK66wpJd6hJh_gA5I5rTG82PkLZDCp96myeg/edit?usp=sharing)
+- [HomeScreen.js - Lesson 6](https://drive.google.com/file/d/14rpm2Oa2yPOKvDUALFzI6KWlR39E3SuZ/view)
+- [Data - Lesson 6](https://drive.google.com/drive/folders/1k5e1npgPeykDYQv-1brUpAnrx0AyVv7_)
 
 ---

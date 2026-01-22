@@ -8,6 +8,8 @@ import ThirdScreen from "./screens/ThirdScreen";
 import ImageScreen from "./screens/ImageScreen";
 import FourthScreen from "./screens/FourthScreen";
 import InstagramHomeScreen from "./screens/InstagramHomeScreen";
+import HomeScreen from "./screens/HomeScreen";
+import GuessTheCountryScreen from "./screens/GuessTheCountry";
 
 // Mencegah splash screen tertutup otomatis
 SplashScreen.preventAutoHideAsync();
@@ -35,7 +37,9 @@ export default function App() {
       {/* <ThirdScreen /> */}
       {/* <ImageScreen /> */}
       {/* <FourthScreen /> */}
-      <InstagramHomeScreen />
+      {/* <InstagramHomeScreen /> */}
+      {/* <HomeScreen /> */}
+      <GuessTheCountryScreen />
     </SafeAreaProvider>
   );
 }
