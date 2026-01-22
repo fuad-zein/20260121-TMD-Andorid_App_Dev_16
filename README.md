@@ -21,5 +21,13 @@
 - [Images - Lesson 3](https://drive.google.com/drive/folders/1bFsvmEgvtaV5T21ZXJpMxdpWyLsmjruH)
 - [Image - Lesson 3 (Psyduck)](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/54.png)
 - [Image - Lesson 3 (Bulbasaur)](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/1.png)
+- [Download Font - StyleScript-Regular](https://drive.google.com/drive/folders/11gnYlzGnHKMg3GXPX-B-FAY6US4wNhXU)
+- [react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
+- [React Native Element](https://reactnativeelements.com/docs/components/icon)
+- [Google Fonts](https://fonts.google.com/)
+- [Image - Lesson 5](https://drive.google.com/drive/folders/1VlSmqLFh1Ybm4PrFxY6hGtemjnozOchy)
+- [Image - Lesson 5 (HomeScreen)](https://wallpaperaccess.com/full/201215.jpg)
+- [Meeting 5 - Reusable Component](https://drive.google.com/file/d/1b0Gkeaae95rRoZQvRPRkFZnNeajwDzY7/view)
+- [Template Meeting 6](https://docs.google.com/document/d/1MHIgWxmgK66wpJd6hJh_gA5I5rTG82PkLZDCp96myeg/edit?usp=sharing)
 
 ---
