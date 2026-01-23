@@ -34,5 +34,6 @@
 - [Data - Lesson 6](https://drive.google.com/drive/folders/1k5e1npgPeykDYQv-1brUpAnrx0AyVv7_)
 - [Image Conratulations - Lesson 7](https://drive.google.com/drive/folders/1cWPIoB12-THt1mCPmE8LAFPmN7ES_htk)
 - [Template Meeting 8](https://docs.google.com/document/d/1XqEWNvbCw7jtn1EpYLqrW395N_nuHuAPebCkOC4LXG4/edit?usp=sharing)
+- [Image - Lesson 8](https://drive.google.com/drive/folders/1owJOJo0-zKz_arwLlgbA-xC5LBpuDctf?usp=drive_link)
 
 ---
