@@ -1,3 +1,5 @@
+import React from "react";
+import "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -9,7 +11,9 @@ import ImageScreen from "./screens/ImageScreen";
 import FourthScreen from "./screens/FourthScreen";
 import InstagramHomeScreen from "./screens/InstagramHomeScreen";
 import HomeScreen from "./screens/HomeScreen";
-import GuessTheCountryScreen from "./screens/GuessTheCountry";
+import GuessTheCountryScreen from "./screens/GuessTheCountryScreen";
+import WinScreen from "./screens/WinScreen";
+import MainNavigator from "./navigator/MainNavigator";
 
 // Mencegah splash screen tertutup otomatis
 SplashScreen.preventAutoHideAsync();
@@ -39,7 +43,9 @@ export default function App() {
       {/* <FourthScreen /> */}
       {/* <InstagramHomeScreen /> */}
       {/* <HomeScreen /> */}
-      <GuessTheCountryScreen />
+      {/* <GuessTheCountryScreen /> */}
+      {/* <WinScreen /> */}
+      <MainNavigator />
     </SafeAreaProvider>
   );
 }
