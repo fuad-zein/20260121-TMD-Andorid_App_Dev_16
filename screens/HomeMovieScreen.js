@@ -1,12 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Image, FlatList, StyleSheet } from "react-native";
 import { movieData } from "../assets/data/MovieData";
+import { ShowMovie } from "../components/MovieComponent";
 
 const HomeMovieScreen = () => {
+  const [recommended, setRecommended] = useState([]);
+  const [mostViewed, setMostViewed] = useState([]);
+
+  const compareRating = (a, b) => {
+    const ratingA = a.rating;
+    const ratingB = b.rating;
+
+    if (ratingA > ratingB) {
+      return -1;
+    } else if (ratingA < ratingB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  const compareViewers = (a, b) => {
+    const viewersA = a.viewers;
+    const viewersB = b.viewers;
+
+    if (viewersA > viewersB) {
+      return -1;
+    } else if (viewersA < viewersB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  useEffect(() => {
+    const sortRecommended = [...movieData].sort(compareRating);
+    const sortedMostViewed = [...movieData].sort(compareViewers);
+    setRecommended(sortRecommended);
+    setMostViewed(sortedMostViewed);
+  });
+
   return (
     <View style={styles.mainContainer}>
       <FlatList
-        data={movieData}
+        data={recommended}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.flatListContainer}
         renderItem={({ item }) => {
@@ -25,6 +62,36 @@ const HomeMovieScreen = () => {
             </View>
           );
         }}
+        ListHeaderComponent={
+          <View>
+            <View style={styles.mainCategoryContainer}>
+              <View style={styles.categoryContainer}>
+                <Text style={styles.categoryText}>Most Viewed</Text>
+              </View>
+            </View>
+
+            <FlatList
+              horizontal
+              data={mostViewed}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => {
+                return (
+                  <ShowMovie
+                    image={{ uri: item.imageLink }}
+                    title={item.title}
+                    viewers={item.viewers}
+                  />
+                );
+              }}
+            />
+
+            <View style={styles.mainCategoryContainer}>
+              <View style={styles.categoryContainer}>
+                <Text style={styles.categoryText}>Recommended</Text>
+              </View>
+            </View>
+          </View>
+        }
       />
     </View>
   );
@@ -61,6 +128,18 @@ const styles = StyleSheet.create({
   },
   yearContainer: {
     marginVertical: 8,
+  },
+  mainCategoryContainer: {
+    marginTop: 8,
+    marginHorizontal: 8,
+    flexDirection: "row",
+  },
+  categoryContainer: {
+    flex: 1,
+  },
+  categoryText: {
+    fontSize: 20,
+    fontWeight: "bold",
   },
 });
 
