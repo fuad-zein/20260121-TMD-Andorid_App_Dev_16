@@ -1,8 +1,13 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
+import { Icon } from "react-native-elements";
 
 export const ShowMovie = (props) => {
   const { image, title, viewers } = props;
+
+  const numberWithCommas = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  };
 
   return (
     <View style={styles.horizontalDataContainer}>
@@ -12,7 +17,8 @@ export const ShowMovie = (props) => {
         <Text style={styles.horizontalTitle}>{title}</Text>
       </View>
       <View style={styles.viewersContainer}>
-        <Text style={styles.viewersText}>{viewers}</Text>
+        <Icon name="eye" type="entypo" size={20} />
+        <Text style={styles.viewersText}>{numberWithCommas(viewers)}</Text>
       </View>
     </View>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, StyleSheet } from "react-native";
 import { userData } from "../assets/data/TryCodeData";
 
 const TryCodeScreen = () => {
@@ -19,7 +19,15 @@ const TryCodeScreen = () => {
         renderItem={({ item }) => {
           return (
             <View
-              style={{ margin: 8, backgroundColor: "lavender", borderWidth: 1 }}
+              style={[
+                styles.containerAnItem,
+                {
+                  backgroundColor:
+                    item.gender.toLowerCase() === "male"
+                      ? "moccasin"
+                      : "lavender",
+                },
+              ]}
             >
               <Image
                 source={{ uri: item.imageLink }}
@@ -28,6 +36,13 @@ const TryCodeScreen = () => {
               <Text>{item.name}</Text>
               <Text>{item.gender}</Text>
               <Text>{item.age}</Text>
+              {item.age >= 6 && item.age <= 12 ? (
+                <Text>Child</Text>
+              ) : item.age >= 13 && item.age <= 17 ? (
+                <Text>Teen</Text>
+              ) : item.age >= 18 && item.age <= 64 ? (
+                <Text>Adult</Text>
+              ) : null}
             </View>
           );
         }}
@@ -35,5 +50,12 @@ const TryCodeScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  containerAnItem: {
+    margin: 8,
+    borderWidth: 1,
+  },
+});
 
 export default TryCodeScreen;

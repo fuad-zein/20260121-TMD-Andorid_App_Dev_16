@@ -17,6 +17,7 @@ import MainNavigator from "./navigator/MainNavigator";
 import SolarSystemScreen from "./screens/SolarSystemScreen";
 import TryCodeScreen from "./screens/TryCodeScreen";
 import HomeMovieScreen from "./screens/HomeMovieScreen";
+import MainMovieNavigator from "./navigator/MainMovieNavigator";
 
 // Mencegah splash screen tertutup otomatis
 SplashScreen.preventAutoHideAsync();
@@ -51,7 +52,8 @@ export default function App() {
       {/* <MainNavigator /> */}
       {/* <SolarSystemScreen /> */}
       {/* <TryCodeScreen /> */}
-      <HomeMovieScreen />
+      {/* <HomeMovieScreen /> */}
+      <MainMovieNavigator />
     </SafeAreaProvider>
   );
 }

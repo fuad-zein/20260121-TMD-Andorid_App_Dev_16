@@ -13,6 +13,7 @@
 - [ID - Image Background](https://youtu.be/LxDHbqUBhdc?si=IW2jqNn6K_5V5UcL)
 - [Props in React Native ID](https://youtu.be/y1iPEAZiRzM?si=FdLSZXT8Kery8sKo)
 - [VIDEO 17 Stack navigation + make Win Screen EN](https://youtu.be/i3tP_B4s5gQ?si=6polVexM2nabNwly)
+- [VIDEO 21 Ternary Operator ID](https://youtu.be/VZ7aqOdVnXM?si=wEoN7WIH0SeaItwD)
 
 ---
 
@@ -38,5 +39,8 @@
 - [Data Movie Colection](https://drive.google.com/drive/folders/1qjey2HhxBGO901fi5t0ufulvNDZ0tnxl)
 - [Movie Data - Challange](https://drive.google.com/drive/folders/1ZXvHB3jlmq_nqm3IOb1_y_pSxehlMk7P)
 - [VisualGo Sorting](https://visualgo.net/en/sorting)
+- [Image - Lesson 11](https://drive.google.com/drive/folders/19JQwwRqpmiQzAIYms7JhfAEeMSoTSKU-)
+- [react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
+- [React Native Elements](https://reactnativeelements.com/docs/components/icon)
 
 ---

@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 import { View, Text, Image, FlatList, StyleSheet } from "react-native";
 import { movieData } from "../assets/data/MovieData";
 import { ShowMovie } from "../components/MovieComponent";
+import { Icon } from "react-native-elements";
 
 const HomeMovieScreen = () => {
   const [recommended, setRecommended] = useState([]);
   const [mostViewed, setMostViewed] = useState([]);
+
+  const starImages = {
+    5: require("../assets/images/movies/five-stars.png"),
+    4: require("../assets/images/movies/four-stars.png"),
+    3: require("../assets/images/movies/three-stars.png"),
+    2: require("../assets/images/movies/two-stars.png"),
+    1: require("../assets/images/movies/star.png"),
+  };
 
   const compareRating = (a, b) => {
     const ratingA = a.rating;
@@ -38,11 +47,12 @@ const HomeMovieScreen = () => {
     const sortedMostViewed = [...movieData].sort(compareViewers);
     setRecommended(sortRecommended);
     setMostViewed(sortedMostViewed);
-  });
+  }, []);
 
   return (
     <View style={styles.mainContainer}>
       <FlatList
+        nestedScrollEnabled
         data={recommended}
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.flatListContainer}
@@ -55,9 +65,30 @@ const HomeMovieScreen = () => {
               />
 
               <View style={styles.movieDescriptionContainer}>
-                <Text style={styles.title}>{item.title}</Text>
-                <Text style={styles.yearContainer}>{item.year}</Text>
-                <Text>{item.rating}</Text>
+                {/* title */}
+                <View style={styles.titleRow}>
+                  <Icon name="title" type="material" size={18} color="#555" />
+                  <Text style={styles.titleText}>{item.title}</Text>
+                </View>
+
+                {/* year */}
+                <View style={styles.yearRow}>
+                  <Icon
+                    name="calendar"
+                    type="antdesign"
+                    size={16}
+                    color="#777"
+                  />
+                  <Text style={styles.yearText}>{item.year}</Text>
+                </View>
+
+                {/* rating */}
+                {starImages[item.rating] && (
+                  <Image
+                    style={styles.starImages}
+                    source={starImages[item.rating]}
+                  />
+                )}
               </View>
             </View>
           );
@@ -72,6 +103,8 @@ const HomeMovieScreen = () => {
 
             <FlatList
               horizontal
+              directionalLockEnabled
+              nestedScrollEnabled
               data={mostViewed}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => {
@@ -103,6 +136,7 @@ const styles = StyleSheet.create({
   },
   flatListContainer: {
     padding: 8,
+    flexGrow: 1,
   },
   dataContainer: {
     margin: 8,
@@ -122,12 +156,24 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginLeft: 8,
   },
-  title: {
+  titleRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 4,
+  },
+  titleText: {
     fontWeight: "bold",
     fontSize: 18,
+    marginLeft: 6,
   },
-  yearContainer: {
-    marginVertical: 8,
+  yearRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginVertical: 6,
+  },
+  yearText: {
+    marginLeft: 6,
+    color: "#666",
   },
   mainCategoryContainer: {
     marginTop: 8,
@@ -140,6 +186,10 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 20,
     fontWeight: "bold",
+  },
+  starImages: {
+    width: 100,
+    height: 20,
   },
 });
 
