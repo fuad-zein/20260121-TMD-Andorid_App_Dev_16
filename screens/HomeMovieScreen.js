@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, FlatList, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  FlatList,
+  StyleSheet,
+  Dimensions,
+} from "react-native";
 import { movieData } from "../assets/data/MovieData";
 import { ShowMovie } from "../components/MovieComponent";
 import { Icon } from "react-native-elements";
+
+const { height, width } = Dimensions.get("window");
 
 const HomeMovieScreen = () => {
   const [recommended, setRecommended] = useState([]);
@@ -132,7 +141,9 @@ const HomeMovieScreen = () => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    flex: 1,
+    // flex: 1,
+    height: height,
+    width: width,
   },
   flatListContainer: {
     padding: 8,
