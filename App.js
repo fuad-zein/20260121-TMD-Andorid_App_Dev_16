@@ -15,6 +15,8 @@ import GuessTheCountryScreen from "./screens/GuessTheCountryScreen";
 import WinScreen from "./screens/WinScreen";
 import MainNavigator from "./navigator/MainNavigator";
 import SolarSystemScreen from "./screens/SolarSystemScreen";
+import TryCodeScreen from "./screens/TryCodeScreen";
+import HomeMovieScreen from "./screens/HomeMovieScreen";
 
 // Mencegah splash screen tertutup otomatis
 SplashScreen.preventAutoHideAsync();
@@ -47,7 +49,9 @@ export default function App() {
       {/* <GuessTheCountryScreen /> */}
       {/* <WinScreen /> */}
       {/* <MainNavigator /> */}
-      <SolarSystemScreen />
+      {/* <SolarSystemScreen /> */}
+      {/* <TryCodeScreen /> */}
+      <HomeMovieScreen />
     </SafeAreaProvider>
   );
 }
