@@ -1,22 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { View, FlatList, StyleSheet, Dimensions } from "react-native";
 import { ShowMovie } from "../components/MovieComponent";
 
 const { height, width } = Dimensions.get("window");
 
-const MostViewedScreen = (props) => {
+const RecommendedScreen = (props) => {
   const { route, navigation } = props;
-  const sortedMostViewed = route.params.allMostViewed;
-
-  // useEffect(() => {
-  //   console.log(sortedMostViewed.length);
-  // }, []);
+  const sortedRecommended = route.params.allRecommended;
 
   return (
-    <View style={styles.mainContainer}>
+    <View style={styles.container}>
       <FlatList
-        contentContainerStyle={styles.mainDataContainer}
-        data={sortedMostViewed}
+        data={sortedRecommended}
+        contentContainerStyle={styles.mainContainer}
         numColumns={2}
         key={2}
         keyExtractor={(item) => item.id}
@@ -25,7 +21,9 @@ const MostViewedScreen = (props) => {
             <ShowMovie
               image={{ uri: item.imageLink }}
               title={item.title}
-              viewers={item.viewers}
+              // viewers={item.viewers}
+              isRecommended={true}
+              rating={item.rating}
               onPress={() => navigation.navigate("DetailMovie", { item })}
             />
           );
@@ -36,13 +34,13 @@ const MostViewedScreen = (props) => {
 };
 
 const styles = StyleSheet.create({
-  mainContainer: {
+  container: {
     height: height,
     width: width,
   },
-  mainDataContainer: {
+  mainContainer: {
     padding: 8,
   },
 });
 
-export default MostViewedScreen;
+export default RecommendedScreen;

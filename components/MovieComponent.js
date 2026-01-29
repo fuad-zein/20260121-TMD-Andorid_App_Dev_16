@@ -1,13 +1,32 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
+import { ButtonComponent } from "./ButtonComponent";
+
+const starImages = {
+  5: require("../assets/images/movies/five-stars.png"),
+  4: require("../assets/images/movies/four-stars.png"),
+  3: require("../assets/images/movies/three-stars.png"),
+  2: require("../assets/images/movies/two-stars.png"),
+  1: require("../assets/images/movies/star.png"),
+};
 
 export const ShowMovie = (props) => {
-  const { image, title, viewers, isHome } = props;
+  const { image, title, viewers, isHome, isRecommended, rating } = props;
 
   const numberWithCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
+
+  let renderValueRecommended =
+    isRecommended && starImages[rating] ? (
+      <Image style={styles.ratingImage} source={starImages[rating]} />
+    ) : (
+      <View style={styles.viewersContainer}>
+        <Icon name="eye" type="entypo" size={20} />
+        <Text style={styles.viewersText}>{numberWithCommas(viewers)}</Text>
+      </View>
+    );
 
   return (
     <View style={[styles.horizontalDataContainer, { flex: isHome ? null : 1 }]}>
@@ -16,24 +35,15 @@ export const ShowMovie = (props) => {
       <View style={styles.horizontalTitleContainer}>
         <Text style={styles.horizontalTitle}>{title}</Text>
       </View>
-      <View style={styles.viewersContainer}>
-        <Icon name="eye" type="entypo" size={20} />
-        <Text style={styles.viewersText}>{numberWithCommas(viewers)}</Text>
-      </View>
+
+      {renderValueRecommended}
+      {isHome ? null : <ButtonComponent {...props} />}
     </View>
   );
 };
 
 export const MovieExplanation = (props) => {
   const { name, value, isRating, rating } = props;
-
-  const starImages = {
-    5: require("../assets/images/movies/five-stars.png"),
-    4: require("../assets/images/movies/four-stars.png"),
-    3: require("../assets/images/movies/three-stars.png"),
-    2: require("../assets/images/movies/two-stars.png"),
-    1: require("../assets/images/movies/star.png"),
-  };
 
   let renderValue =
     isRating && starImages[rating] ? (

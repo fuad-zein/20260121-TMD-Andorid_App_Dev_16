@@ -19,6 +19,7 @@ const HomeMovieScreen = (props) => {
   const [recommended, setRecommended] = useState([]);
   const [mostViewed, setMostViewed] = useState([]);
   const [allMostViewed, setAllMostViewed] = useState([]);
+  const [allRecommended, setAllRecommended] = useState([]);
 
   const starImages = {
     5: require("../assets/images/movies/five-stars.png"),
@@ -73,6 +74,7 @@ const HomeMovieScreen = (props) => {
     setRecommended(threeRecommended);
     setMostViewed(threeMostViewed);
     setAllMostViewed(sortedMostViewed);
+    setAllRecommended(sortRecommended);
   }, []);
 
   return (
@@ -180,6 +182,15 @@ const HomeMovieScreen = (props) => {
             <View style={styles.mainCategoryContainer}>
               <View style={styles.categoryContainer}>
                 <Text style={styles.categoryText}>Recommended</Text>
+              </View>
+              <View style={styles.seeAllContainer}>
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate("Recommended", { allRecommended })
+                  }
+                >
+                  <Text style={styles.seeAllText}>See All</Text>
+                </TouchableOpacity>
               </View>
             </View>
           </View>
