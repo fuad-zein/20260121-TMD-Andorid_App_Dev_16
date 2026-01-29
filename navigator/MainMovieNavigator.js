@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeMovieScreen from "../screens/HomeMovieScreen";
+import DetailMovieScreen from "../screens/DetailMovieScreen";
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,17 @@ const MainMovieNavigator = () => {
             },
           }}
           component={HomeMovieScreen}
+        />
+        <Stack.Screen
+          name="DetailMovie"
+          options={{
+            title: "Detail Movie",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              fontSize: 25,
+            },
+          }}
+          component={DetailMovieScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

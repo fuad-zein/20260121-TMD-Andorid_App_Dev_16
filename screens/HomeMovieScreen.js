@@ -10,10 +10,11 @@ import {
 import { movieData } from "../assets/data/MovieData";
 import { ShowMovie } from "../components/MovieComponent";
 import { Icon } from "react-native-elements";
+import { ButtonComponent } from "../components/ButtonComponent";
 
 const { height, width } = Dimensions.get("window");
 
-const HomeMovieScreen = () => {
+const HomeMovieScreen = (props) => {
   const [recommended, setRecommended] = useState([]);
   const [mostViewed, setMostViewed] = useState([]);
 
@@ -24,6 +25,8 @@ const HomeMovieScreen = () => {
     2: require("../assets/images/movies/two-stars.png"),
     1: require("../assets/images/movies/star.png"),
   };
+
+  const { navigation } = props;
 
   const compareRating = (a, b) => {
     const ratingA = a.rating;
@@ -98,6 +101,16 @@ const HomeMovieScreen = () => {
                     source={starImages[item.rating]}
                   />
                 )}
+
+                <ButtonComponent
+                  onPress={() =>
+                    navigation.navigate("DetailMovie", {
+                      // title: item.title,
+                      // year: item.year,
+                      item,
+                    })
+                  }
+                />
               </View>
             </View>
           );

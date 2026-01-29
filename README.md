@@ -14,6 +14,7 @@
 - [Props in React Native ID](https://youtu.be/y1iPEAZiRzM?si=FdLSZXT8Kery8sKo)
 - [VIDEO 17 Stack navigation + make Win Screen EN](https://youtu.be/i3tP_B4s5gQ?si=6polVexM2nabNwly)
 - [VIDEO 21 Ternary Operator ID](https://youtu.be/VZ7aqOdVnXM?si=wEoN7WIH0SeaItwD)
+- [ID VIDEO 24 Passing Data between Screens](https://youtu.be/FpHOtelW2XU?si=XltgNLGrJ0FNxqiE)
 
 ---
 
