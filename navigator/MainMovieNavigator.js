@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import HomeMovieScreen from "../screens/HomeMovieScreen";
 import DetailMovieScreen from "../screens/DetailMovieScreen";
+import MostViewedScreen from "../screens/MostViewedScreen";
 
 const Stack = createStackNavigator();
 
@@ -31,6 +32,17 @@ const MainMovieNavigator = () => {
             },
           }}
           component={DetailMovieScreen}
+        />
+        <Stack.Screen
+          name="MostViewed"
+          options={{
+            title: "Most Viewed",
+            headerTitleStyle: {
+              fontWeight: "bold",
+              fontSize: 25,
+            },
+          }}
+          component={MostViewedScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

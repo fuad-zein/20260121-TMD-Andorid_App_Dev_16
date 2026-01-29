@@ -11,11 +11,11 @@ const DetailMovieScreen = (props) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
   };
 
-  useEffect(() => {
-    console.log(movie);
-    // console.log(title);
-    // console.log(year);
-  }, []);
+  // useEffect(() => {
+  //   console.log(movie);
+  //   // console.log(title);
+  //   // console.log(year);
+  // }, []);
 
   return (
     <View style={styles.mainContainer}>

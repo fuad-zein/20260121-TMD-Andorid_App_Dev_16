@@ -6,6 +6,7 @@ import {
   FlatList,
   StyleSheet,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { movieData } from "../assets/data/MovieData";
 import { ShowMovie } from "../components/MovieComponent";
@@ -17,6 +18,7 @@ const { height, width } = Dimensions.get("window");
 const HomeMovieScreen = (props) => {
   const [recommended, setRecommended] = useState([]);
   const [mostViewed, setMostViewed] = useState([]);
+  const [allMostViewed, setAllMostViewed] = useState([]);
 
   const starImages = {
     5: require("../assets/images/movies/five-stars.png"),
@@ -55,10 +57,22 @@ const HomeMovieScreen = (props) => {
   };
 
   useEffect(() => {
+    const threeRecommended = [];
+    const threeMostViewed = [];
     const sortRecommended = [...movieData].sort(compareRating);
     const sortedMostViewed = [...movieData].sort(compareViewers);
-    setRecommended(sortRecommended);
-    setMostViewed(sortedMostViewed);
+
+    for (let i = 0; i < 3; i++) {
+      threeRecommended.push(sortRecommended[i]);
+    }
+
+    for (let i = 0; i < 3; i++) {
+      threeMostViewed.push(sortedMostViewed[i]);
+    }
+
+    setRecommended(threeRecommended);
+    setMostViewed(threeMostViewed);
+    setAllMostViewed(sortedMostViewed);
   }, []);
 
   return (
@@ -115,11 +129,25 @@ const HomeMovieScreen = (props) => {
             </View>
           );
         }}
+        ListEmptyComponent={
+          <View style={{ alignItems: "center" }}>
+            <Text>No items in this category. </Text>
+          </View>
+        }
         ListHeaderComponent={
           <View>
             <View style={styles.mainCategoryContainer}>
               <View style={styles.categoryContainer}>
                 <Text style={styles.categoryText}>Most Viewed</Text>
+              </View>
+              <View style={styles.seeAllContainer}>
+                <TouchableOpacity
+                  onPress={() =>
+                    navigation.navigate("MostViewed", { allMostViewed })
+                  }
+                >
+                  <Text style={styles.seeAllText}>See All</Text>
+                </TouchableOpacity>
               </View>
             </View>
 
@@ -135,9 +163,18 @@ const HomeMovieScreen = (props) => {
                     image={{ uri: item.imageLink }}
                     title={item.title}
                     viewers={item.viewers}
+                    isHome={true}
                   />
                 );
               }}
+              contentContainerStyle={{
+                flex: mostViewed.length === 0 ? 1 : null,
+              }}
+              ListEmptyComponent={
+                <View style={{ alignItems: "center", flex: 1 }}>
+                  <Text>No items in this category. </Text>
+                </View>
+              }
             />
 
             <View style={styles.mainCategoryContainer}>
@@ -214,6 +251,16 @@ const styles = StyleSheet.create({
   starImages: {
     width: 100,
     height: 20,
+  },
+  seeAllContainer: {
+    flex: 1,
+    alignItems: "flex-end",
+    justifyContent: "center",
+  },
+  seeAllText: {
+    color: "#009688",
+    fontWeight: "bold",
+    textDecorationLine: "underline",
   },
 });
 

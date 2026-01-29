@@ -15,6 +15,7 @@
 - [VIDEO 17 Stack navigation + make Win Screen EN](https://youtu.be/i3tP_B4s5gQ?si=6polVexM2nabNwly)
 - [VIDEO 21 Ternary Operator ID](https://youtu.be/VZ7aqOdVnXM?si=wEoN7WIH0SeaItwD)
 - [ID VIDEO 24 Passing Data between Screens](https://youtu.be/FpHOtelW2XU?si=XltgNLGrJ0FNxqiE)
+- [VIDEO 23 Empty FlatList ID](https://youtu.be/NMFKEHcq-E0?si=VrAn9hYjMiy4Py-0)
 
 ---
 
